@@ -1,0 +1,100 @@
+import random
+import os
+
+entrada = 0
+
+item = []
+desc = []
+
+contador = 0
+while entrada !=4:
+    print("""
+                        -~-~-~-~-~-~-~-~-~-
+                        |      CRUD       |
+                        |    EM PYTHON    |
+                        -~-~-~-~-~-~-~-~-~-
+        
+
+    Copyrigth 2025, Author victormellos. All right reserved.
+    """)
+    print("\n")
+
+    print("1) Criar item\n2) Listar itens\n3) Buscar itens\n4) Sair")
+    entrada =int(input(">> "))
+    if(entrada == 1):
+        print("""
+        --------------
+        | CRIAR ITEM |
+        --------------
+        """)
+        novo_item = input("Digite o nome do novo item\n~> ")
+        item.append(novo_item)
+        novo_item = input("Digite a descrição do novo item\n~> ")
+        desc.append(novo_item)
+        contador+=1
+        print("Item criado com sucesso!")
+    if(entrada == 2):
+        print("""
+        ~----------------~
+        { LISTA DE ITENS }
+        ~----------------~
+        """)
+        print("CÓD -- ITEM -- DESC.")
+        if item:
+            for i in range(contador):
+                print(i, " -- ", item[i], " -- ", desc[i])
+            print("1) Sair da listagem\n2) Alterar item")
+            escolha = int(input("~> "))
+            if escolha == 2:
+                print("1) Alterar um item por completo\n2) Alterar o nome de um item\n3) Alterar a descrição de um item\n4) Excluir um item\n5) Cancelar")
+                escolha = int(input("~> "))
+                if escolha == 1:
+                    print("Digite o código do item que deseja alterar")
+                    codigo = int(input("~> "))
+                    print("ITEM ESCOLHIDO: ", item[codigo]," -- ", desc[codigo])
+                    print("Tem certeza que deseja altera-lo?\n1)Sim, tenho certeza\n2)Não, cancelar")
+                    escolha = int(input("~> "))
+                    if escolha ==1:
+                        print("Digite o novo nome do item")
+                        novo_item = input(">> ")
+                        item.insert(codigo, novo_item)
+                        print("Digite a nova descrição do item")
+                        novo_item = input(">> ")
+                        desc.insert(codigo, novo_item)
+                if escolha == 2:
+                    print("Digite o código do item que deseja alterar")
+                    codigo = int(input("~> "))
+                    print("ITEM ESCOLHIDO: ", item[codigo]," -- ", desc[codigo])
+                    print("Tem certeza que deseja altera-lo?\n1)Sim, tenho certeza\n2)Não, cancelar")
+                    escolha = int(input("~> "))
+                    if escolha ==1:
+                        print("Digite o novo nome do item")
+                        novo_item = input(">> ")
+                        item.insert(codigo, novo_item)
+                if escolha ==3:
+                    print("Digite o código do item que deseja alterar")
+
+
+
+        else:           
+            print("Sua lista está vazia!")
+    if(entrada == 3):
+        print("""
+        ~----------------~
+        {  BUSCAR ITENS  }
+        ~----------------~
+        """)
+        print("\n")
+        print("1) Buscar item pelo nome\n2) Buscar item pela descrição")
+        escolha = int(input("~> "))
+        if escolha == 1:
+            print("Digite o nome do item que você procura")
+            procura = input(">> ")
+            for i in range(contador):
+                if procura == item[i]:
+                    print(i," -- ",item[i]," -- ",desc[i], "\n")
+        
+
+
+else:
+    print("Saindo...")
