@@ -102,13 +102,16 @@ while entrada_principal != 4:
                                         itensencontrados.append(item[i])
                                         descencontradas.append(desc[i])
                                         posicoesencontradas.append(i)
+                                
 
                                         
                                 if itensencontrados:
                                     print("ITENS ENCONTRADOS: ")
                                     print("COD -- ITEM -- DESC")
                                     for i in range(len(itensencontrados)):
-                                        print(f"{posicoesencontradas[i]} -- {itensencontrados[i]} -- {descencontradas[i]}")
+                                        print(f"{posicoesencontradas} -- {itensencontrados} -- {descencontradas}")
+                                    input("")
+
                                 else:
                                     print("Nenhum item corresponde a sua busca.")
                                     
@@ -130,7 +133,9 @@ while entrada_principal != 4:
                                     print("ITENS ENCONTRADOS: ")
                                     print("COD -- ITEM -- DESC")
                                     for i in range(len(itensencontrados)):
-                                        print(f"{posicoesencontradas} -- {itensencontrados} -- {descencontradas}")
+                                        print(f"{posicoesencontradas[i]} -- {itensencontrados[i]} -- {descencontradas[i]}")
+                                        
+                                    input("")
                                 else:
                                     print("Nenhum item corresponde a sua busca.")
                     case 3:
@@ -147,12 +152,20 @@ while entrada_principal != 4:
                                     item[codigo_excluir] = ""
                                     
                                     desc[codigo_excluir] = ""
+
+                                        
+
+                        
+
+
             
             else:
                 print("Lista vazia.")
+                input("")
             
         case 3:
-            print("CRUD EM PYTHON é um programa feito por victormellos, me python")
+            print("CRUD EM PYTHON é um programa feito por victormellos, em python")
+            input("")
 
 
 
