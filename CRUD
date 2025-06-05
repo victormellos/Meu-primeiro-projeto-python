@@ -1,0 +1,169 @@
+import os
+
+entrada_principal = 0
+contador = 0
+item = []
+desc = []
+
+
+while entrada_principal != 4:
+    os.system('cls')
+    
+    itensencontrados = []
+    descencontradas = []
+    posicoesencontradas = []
+
+    print("""
+    -~-~-~-~-~-~-~-~-~-~-
+    {      - CRUD -     }
+    {     EM PYTHON     }
+    -~-~-~-~-~-~-~-~-~-~-
+    """)
+    print("\n")
+    print("1) Criar item\n2) Listar Itens\n3) Informações\n4) Sair")
+    entrada_principal = int(input(">> "))
+    os.system('cls')
+    match entrada_principal:
+        case 1:
+            print("Digite o nome do novo item")
+            nome = input("~> ")
+            item.append(nome)
+            print("Digite a descrição do novo item")
+            nome = input("~> ")
+            desc.append(nome)
+            print("Item criado com sucesso!")
+            input("")
+            contador += 1
+            
+        case 2:
+
+            if item:
+                print("CÓD -- ITEM -- DESC")
+                for i in range(contador):
+                    print(i, " -- ", item[i], " -- ", desc[i])
+                input("")
+
+                print("\n")
+                print("1) Alterar um item\n2) Buscar por um item\n3) Excluir um item\n4) Sair da listagem")
+                escolha = int(input(">> "))
+                match escolha:
+                    case 1:
+                        print("Digite o código do item que deseja alterar")
+                        codigo = int(input(">> "))
+                        if codigo >= 0 and codigo <= contador:
+                        
+                            print("ITEM ENCONTRADO:")
+                            print(f"{codigo} -- {item[codigo]} -- {desc[codigo]}")
+                            print("\nTem certeza que deseja alterar o item?")
+                            print("1) Sim, tenho certeza\n2) Não, cancelar a alteração")
+                            alterar = int(input(">> "))
+                            match alterar:
+                                case 1:
+                                    print("1) Alterar o nome e a descrição do item\n2) Alterar o nome do item\n3) Alterar a descrição do item")
+                                    alterar = int(input(">> "))
+                                    match alterar:
+                                        case 1:
+                                                print("Digite o novo nome do item")
+                                                novo_nome = input("~> ")
+                                                item[codigo] = novo_nome
+                                                print("Digite a nova descrição do item")
+                                                nova_descricao = input("~>")
+                                                desc[codigo] = nova_descricao
+                                                print("Item alterado com sucesso!")
+                                                input("")
+                                        case 2:
+                                            print("Digite o novo nome do item")
+                                            novo_nome = input("~> ")
+                                            item[codigo] = novo_nome
+                                            print("Item alterado com sucesso!")
+                                            input("")
+                                        case 3:
+                                            print("Digite a nova descrição do item")
+                                            nova_descricao = input("~>")
+                                            desc[codigo] = nova_descricao
+                                            print("Item alterado com sucesso!")
+                                            input("")
+                        else:
+                            print("Nenhum item condiz com o código informado.")
+
+                    case 2:
+                        print("1) Buscar por nome\n2) Buscar por descrição\n")
+                        escolha_buscar = int(input(">> "))
+                        
+
+                        match escolha_buscar:
+                            
+                            case 1:
+                                
+                                print("Digite o nome do item")
+                                busca_nome = input(">> ")
+                                for i in range(contador):
+                                    if busca_nome == item[i]:
+                                        itensencontrados.append(item[i])
+                                        descencontradas.append(desc[i])
+                                        posicoesencontradas.append(i)
+
+                                        
+                                if itensencontrados:
+                                    print("ITENS ENCONTRADOS: ")
+                                    print("COD -- ITEM -- DESC")
+                                    for i in range(len(itensencontrados)):
+                                        print(f"{posicoesencontradas} -- {itensencontrados} -- {descencontradas}")
+                                else:
+                                    print("Nenhum item corresponde a sua busca.")
+                                    
+
+                                    
+                                    
+                                    
+                            case 2:
+                                print("Digite a descrição do item")
+                                busca_descricao = input(">> ")
+                                for i in range(contador):
+                                    if busca_descricao == desc[i]:
+                                        itensencontrados.append(item[i])
+                                        descencontradas.append(desc[i])
+                                        posicoesencontradas.append(i)
+
+                                        
+                                if itensencontrados:
+                                    print("ITENS ENCONTRADOS: ")
+                                    print("COD -- ITEM -- DESC")
+                                    for i in range(len(itensencontrados)):
+                                        print(f"{posicoesencontradas} -- {itensencontrados} -- {descencontradas}")
+                                else:
+                                    print("Nenhum item corresponde a sua busca.")
+                    case 3:
+                        print("Digite o código do item que deseja excluir")
+                        codigo_excluir = int(input(">> "))
+                        if codigo_excluir >= 0 and codigo_excluir <= contador:
+                            print("Item encontrado:")
+                            print(f"{codigo_excluir} -- {item[codigo_excluir]} -- {desc[codigo_excluir]}")
+                            print("Tem certeza que deseja excluir o item?")
+                            print("1) Sim, excluir\n2) Não, cancelar")
+                            escolha_excluir = int(input(">> "))
+                            match escolha_excluir:
+                                case 1:
+                                    item[codigo_excluir] = ""
+                                    
+                                    desc[codigo_excluir] = ""
+
+                                        
+
+                        
+
+
+            
+            else:
+                print("Lista vazia.")
+            
+        case 3:
+            print("CRUD EM PYTHON é um programa feito por victormellos, me python")
+
+
+
+
+
+
+else:
+    print("Saindo...")
