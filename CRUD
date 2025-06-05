@@ -108,7 +108,7 @@ while entrada_principal != 4:
                                     print("ITENS ENCONTRADOS: ")
                                     print("COD -- ITEM -- DESC")
                                     for i in range(len(itensencontrados)):
-                                        print(f"{posicoesencontradas} -- {itensencontrados} -- {descencontradas}")
+                                        print(f"{posicoesencontradas[i]} -- {itensencontrados[i]} -- {descencontradas[i]}")
                                 else:
                                     print("Nenhum item corresponde a sua busca.")
                                     
