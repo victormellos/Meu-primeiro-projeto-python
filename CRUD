@@ -147,12 +147,6 @@ while entrada_principal != 4:
                                     item[codigo_excluir] = ""
                                     
                                     desc[codigo_excluir] = ""
-
-                                        
-
-                        
-
-
             
             else:
                 print("Lista vazia.")
