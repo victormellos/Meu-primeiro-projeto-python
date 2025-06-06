@@ -1,5 +1,4 @@
 import os
-
 entrada_principal = 0
 contador = 0
 item = []
